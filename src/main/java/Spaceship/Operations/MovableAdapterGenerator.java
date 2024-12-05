@@ -1,4 +1,4 @@
-package spaceship.operations;
+package Spaceship.Operations;
 
 import java.io.IOException;
 import java.nio.file.Files;

@@ -1,4 +1,4 @@
-package spaceship.operations;
+package Spaceship.Operations;
 
 public class IoC {
     public static <T> T Resolve(String key, Object... args) {

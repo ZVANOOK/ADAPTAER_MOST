@@ -1,4 +1,4 @@
-package spaceship.operations;
+package Spaceship.Operations;
 
 import java.util.Vector;
 
