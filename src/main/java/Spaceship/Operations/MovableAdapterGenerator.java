@@ -15,12 +15,12 @@ public class MovableAdapterGenerator {
                         "import Spaceship.Operations.UObject;\n" +
                         "import Spaceship.Operations.IoC;\n" +
                         "\n" +
-                        "public class " + className + " implements IMovable {\n" + // Обязательно указываем IMovable
+                        "public class " + className + " implements IMovable {\n" +
                         "  UObject obj;\n\n" +
                         "  public " + className + "(UObject obj) {\n" +
                         "      this.obj = obj;\n" +
                         "  }\n\n" +
-                        "  public Vector getPosition() {\n" + // Верно используем ваш Vector
+                        "  public Vector getPosition() {\n" +
                         "      return (Vector) IoC.Resolve(\"" + interfaceName + ":position.get\", obj);\n" +
                         "  }\n\n" +
                         "  public Vector getVelocity() {\n" +
@@ -28,6 +28,9 @@ public class MovableAdapterGenerator {
                         "  }\n\n" +
                         "  public void setPosition(Vector newValue) {\n" +
                         "      IoC.Resolve(\"" + interfaceName + ":position.set\", obj, newValue);\n" +
+                        "  }\n\n" +
+                        "  public static IMovable createAdapter(UObject obj) {\n" +  // Новый метод для создания адаптера
+                        "      return new " + className + "(obj);\n" +
                         "  }\n" +
                         "}\n";
 
